@@ -1,0 +1,116 @@
+@keyframes fadeInUp {
+    from {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        transform: translateX(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+body {
+    background: url(../images/background.jpeg);
+    font-family: 'Encode Sans Condensed', sans-serif;
+}
+
+
+#game-container {
+    width: 70%;
+    margin: 30px auto;
+    background:rgb(0, 98, 209);
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+h1 {
+    color: white;
+    margin: 0 0 30px;
+    font-size: 42px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 21px;
+    cursor: pointer;
+    border-radius: 3px;
+    background: white;
+    border: 0;
+
+}
+
+#game-won {
+    display: none;
+}
+
+#game {
+    display: none;
+    margin-top: 21px;
+    font-size: 18px;
+}
+
+#remaining-time {
+    font-size: 32px;
+    padding: 10px;
+    border: 2px solid white;
+}
+
+#question {
+    font-weight: bold;
+    font-size: 19px;
+    margin: 15px 0;
+    animation-name: fadeInUp;
+    animation-duration: .5s;
+    padding: 10px;
+    border-bottom: 2px solid white;
+}
+
+.answer {
+    margin: 5px 0;
+    cursor: pointer;
+    transition: .3s all;
+}
+
+.answer:nth-child(2n) {
+    animation: fadeInLeft .5s; /* appear from left, others appear from right */
+}
+
+.answer:nth-child(2n-1) {
+    animation: fadeInRight .5s; /* appear from left, others appear from right */
+}
+
+.answer:hover {
+    transform: scale(1.1);
+    color: #999;
+}
+
+#message {
+    display: none;
+    font-size: 36px;
+    color: orangered;
+    font-weight: bold;
+    margin: 10px 0 5px;
+}
